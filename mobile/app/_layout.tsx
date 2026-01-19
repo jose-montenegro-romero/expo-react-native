@@ -1,5 +1,11 @@
-import { Stack } from "expo-router";
+import { Slot, Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function RootLayout() {
-  return <Stack />;
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <Slot />
+    </SafeAreaView>
+  );
 }
