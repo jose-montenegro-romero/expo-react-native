@@ -15,11 +15,6 @@ const sql = postgres(ENV.DATABASE_URL, {
     ssl: ENV.NODE_ENV === 'production' ? 'require' : false,
 });
 
-// Handle connection errors
-sql.on('error', (err) => {
-    console.error('Database connection error:', err);
-});
-
 export const db = drizzle(sql, { schema });
 
 export const closeDB = async () => {
